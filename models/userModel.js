@@ -9,7 +9,6 @@ const userSchema = mongoose.Schema(
         },
         mobileNo: {
             type: String,
-            required: true,
         },
         email: {
             type: String,
@@ -18,7 +17,6 @@ const userSchema = mongoose.Schema(
         },
         imageURL: {
             type: String,
-            required: true,
         },
     },
     {
