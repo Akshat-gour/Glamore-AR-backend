@@ -21,6 +21,31 @@ const authUser = asyncHandler(async (req, res) => {
     }
 })
 
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+const checkUser = asyncHandler(async (req, res) => {
+    const { email } = req.body
+
+    const user = await User.findOne({ email })
+
+    if (user) {
+        res.json({
+            isExist: true,
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            mobileNo: user.mobileNo,
+            imageURL: user.imageURL,
+        })
+    } else {
+        res.status(401).json({
+            isExist: false,
+        })
+        throw new Error('Invalid user')
+    }
+})
+
 // @desc    Register a new user
 // @route   POST /api/users
 // @access  Public
