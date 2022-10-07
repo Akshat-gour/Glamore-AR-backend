@@ -50,7 +50,7 @@ const checkUser = asyncHandler(async (req, res) => {
 // @route   POST /api/users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, email, mobileNo, imageURL } = req.body
+    const { name, email, mobileNo, imageURL, ID } = req.body
 
     const userExists = await User.findOne({ email })
 
@@ -64,6 +64,7 @@ const registerUser = asyncHandler(async (req, res) => {
         email,
         mobileNo,
         imageURL,
+        ID,
     })
 
     if (user) {
@@ -73,6 +74,7 @@ const registerUser = asyncHandler(async (req, res) => {
             email: user.email,
             mobileNo: user.mobileNo,
             imageURL: user.imageURL,
+            ID: user.ID,
         })
     } else {
         res.status(400)
