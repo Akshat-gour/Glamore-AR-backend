@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import users from './data/ItemResponse.js'
-import User from './models/itemResponse.js'
+import User from './models/itemResponseModel.js'
 import connectDB from './config/db.js'
 dotenv.config()
 connectDB()

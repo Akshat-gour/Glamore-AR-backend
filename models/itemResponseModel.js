@@ -22,6 +22,10 @@ const itemResponseSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    productModelURL: {
+        type: String,
+        required: true,
+    },
 })
 
 const ItemResponse = mongoose.model('ItemResponse', itemResponseSchema)

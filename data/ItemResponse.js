@@ -8,6 +8,7 @@ const ItemResponse = [
         productImages: 'www.google.com',
         productDescription: 'www.google.com',
         productClass: 'ww',
+        productModelURL: 'ww',
     },
 ]
 
