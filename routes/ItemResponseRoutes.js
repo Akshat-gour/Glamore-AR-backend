@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import { fetchAllData } from '../controllers/itemController.js'
+import { fetchAllData, createData } from '../controllers/itemController.js'
 
-router.route('/').get(fetchAllData)
+router.route('/').get(fetchAllData).post(createData)
 export default router
