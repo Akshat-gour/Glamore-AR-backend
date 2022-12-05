@@ -15,8 +15,10 @@
         "dotenv": "^16.0.2",
         "express": "^4.18.1",
         "express-async-handler": "^1.2.0",
+        "ioredis": "^5.2.4",
         "mongoose": "^6.6.2",
         "nodemodule": "^0.3.0",
-        "nodemon": "^2.0.20"
+        "nodemon": "^2.0.20",
+        "rate-limiter-flexible": "^2.4.1"
     }
 }

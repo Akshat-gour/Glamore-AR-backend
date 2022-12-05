@@ -1,6 +1,19 @@
 import asyncHandler from 'express-async-handler'
 import ItemResponse from '../models/itemResponseModel.js'
 
+function onlyLetters(str) {
+    return /^[a-zA-Z]+$/.test(str)
+}
+function isValidUrl(string) {
+    let url
+    try {
+        url = new URL(string)
+    } catch (_) {
+        return false
+    }
+    return url.protocol === 'http:' || url.protocol === 'https:'
+}
+
 // @desc    Get Data
 // @route   GET /api/items
 // @access  Public
@@ -29,6 +42,18 @@ const createData = asyncHandler(async (req, res) => {
         productModelURL,
     } = req.body
 
+    if (
+        !onlyLetters(productName) &&
+        !isValidUrl(productThumbnailURL) &&
+        !isNaN(productPrice) &&
+        productImages.size() == 0 &&
+        !onlyLetters(productDescription) &&
+        !onlyLetters(productClass) &&
+        !isValidUrl(productModelURL)
+    ) {
+        res.status(400)
+        throw new Error('insert valid data')
+    }
     // const userExists = await User.findOne({ email })
 
     // if (userExists) {
