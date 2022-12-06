@@ -6,6 +6,7 @@
     "type": "module",
     "scripts": {
         "server": "nodemon index",
+        "redis": "redis-server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Akshat",
@@ -18,7 +19,6 @@
         "ioredis": "^5.2.4",
         "mongoose": "^6.6.2",
         "nodemodule": "^0.3.0",
-        "nodemon": "^2.0.20",
-        "rate-limiter-flexible": "^2.4.1"
+        "nodemon": "^2.0.20"
     }
 }
